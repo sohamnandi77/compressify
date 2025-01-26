@@ -22,7 +22,7 @@ export const VideoTrim = ({
 
   useEffect(() => {
     const video = document.getElementById(
-      "condense-video-player"
+      "compress-video-player"
     ) as HTMLVideoElement;
 
     if (video) {
@@ -40,7 +40,8 @@ export const VideoTrim = ({
         video.removeEventListener("loadedmetadata", handleLoadedMetadata);
       };
     }
-  }, []);
+  }, [onVideoSettingsChange, videoSettings]);
+
   return (
     <motion.div
       initial={{ scale: 0.8, opacity: 0 }}

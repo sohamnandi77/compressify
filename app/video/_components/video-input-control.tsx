@@ -45,7 +45,7 @@ export const VideoInputControl = ({
         />
       </div>
       <div className={`flex justify-between items-center border-b mb-2 pb-2`}>
-        <p>Condense for Twitter</p>
+        <p>Compress for Twitter</p>
         <Switch
           disabled={disable}
           onCheckedChange={(value: boolean) =>
@@ -58,7 +58,7 @@ export const VideoInputControl = ({
         />
       </div>
       <div className="flex justify-between items-center border-b mb-2 pb-2">
-        <p>Condense for Whatsapp Status</p>
+        <p>Compress for Whatsapp Status</p>
         <Switch
           disabled={disable}
           onCheckedChange={(value: boolean) =>

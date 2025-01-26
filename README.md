@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [Compressify](https://github.com/sohamnandi77/compressify) &middot; [![Author Soham](https://img.shields.io/badge/Author-Soham-%3C%3E)](https://www.sohamnandi.com)
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a web-based video compression tool built using **FFmpeg.wasm** and **Next.js**. It allows users to upload video files, compress them in the browser, and download the compressed versions without needing server-side processing. The project leverages the power of **FFmpeg**, a popular multimedia framework, compiled to WebAssembly (Wasm) to enable video processing directly in the browser.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The frontend is built with **Next.js**, a React framework that provides server-side rendering, static site generation, and API routes, making it a perfect fit for this project. The combination of FFmpeg.wasm and Next.js ensures a seamless user experience with fast, client-side video compression.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Video Upload**: Users can upload video files in various formats (e.g., MP4, AVI, MOV).
+2. **Compression Settings**: Users can adjust compression parameters such as resolution, bitrate, and output format.
+3. **Client-Side Processing**: Video compression is performed entirely in the browser using FFmpeg.wasm, ensuring privacy and reducing server load.
+4. **Real-Time Progress**: The compression progress is displayed in real-time using a progress bar.
+5. **Download Compressed Video**: Users can download the compressed video file after processing.
+6. **Responsive Design**: The application is fully responsive and works on both desktop and mobile devices.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **FFmpeg.wasm**: A WebAssembly port of FFmpeg for video processing in the browser.
+- **Next.js**: A React framework for building server-rendered and static web applications.
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for styling the application.
+- **File API**: For handling file uploads and downloads in the browser.
+- **Web Workers**: To run FFmpeg.wasm in a separate thread and avoid blocking the main thread.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## How It Works
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **File Upload**: The user selects a video file using the file input. The file is read using the File API and passed to FFmpeg.wasm.
+2. **FFmpeg.wasm Setup**: FFmpeg.wasm is initialized in a Web Worker to avoid blocking the main thread. The video file is loaded into FFmpeg.
+3. **Compression**: FFmpeg processes the video based on user-defined settings (e.g., resolution, bitrate). The progress is tracked and displayed in real-time.
+4. **Output**: Once compression is complete, the processed video is saved as a new file and made available for download.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Limitations
+
+1. **Browser Support**: FFmpeg.wasm relies on WebAssembly, which may not be supported in older browsers.
+2. **Performance**: Video compression can be resource-intensive and may cause performance issues on low-end devices.
+3. **File Size**: Large video files may take longer to process and could exceed browser memory limits.
+
+---
+
+Enjoy compressing videos with ease! 🎥✨
