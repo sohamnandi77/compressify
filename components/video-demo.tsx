@@ -6,7 +6,7 @@ export const VideoDemo = () => (
     <Image
       width={1000}
       height={405}
-      src={"/demo3.gif"}
+      src={"/compressify-demo.gif"}
       className="h-full rounded-3xl w-full object-cover border-8 overflow-clip"
       alt="demo"
     />
