@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Hero = () => (
+export const Hero = () => (
   <div className="pt-10 md:pt-20 px-6 lg:px-0">
     <h1 className="text-center text-4xl font-bold md:text-5xl lg:text-7xl lg:font-semibold text-gray-900 text-balance">
       Compress Videos
@@ -19,5 +19,3 @@ const Hero = () => (
     </div>
   </div>
 );
-
-export default Hero;

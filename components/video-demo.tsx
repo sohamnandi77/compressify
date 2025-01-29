@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const VideoDemo = () => (
+export const VideoDemo = () => (
   <div className="px-6 relative">
     <Image
       width={1000}
@@ -12,5 +12,3 @@ const VideoDemo = () => (
     />
   </div>
 );
-
-export default VideoDemo;

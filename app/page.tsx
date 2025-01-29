@@ -1,5 +1,6 @@
-import Hero from "../components/hero";
-import VideoDemo from "../components/video-demo";
+import { Footer } from "@/components/footer";
+import { Hero } from "../components/hero";
+import { VideoDemo } from "../components/video-demo";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <div>
         <Hero />
         <VideoDemo />
+        <Footer />
       </div>
     </div>
   );

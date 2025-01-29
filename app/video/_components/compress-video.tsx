@@ -73,11 +73,11 @@ const CompressVideo = () => {
     const ffmpeg = ffmpegRef.current;
     await ffmpeg.load({
       coreURL: await toBlobURL(
-        `http://localhost:3000/download/ffmpeg-core.js`,
+        `${process.env.NEXT_APP_URL}/ffmpeg-core.js`,
         "text/javascript"
       ),
       wasmURL: await toBlobURL(
-        `http://localhost:3000/download/ffmpeg-core.wasm`,
+        `${process.env.NEXT_APP_URL}/ffmpeg-core.wasm`,
         "application/wasm"
       ),
     });
