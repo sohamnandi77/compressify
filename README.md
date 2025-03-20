@@ -6,6 +6,10 @@ This project is a web-based video compression tool built using **FFmpeg.wasm** a
 
 The frontend is built with **Next.js**, a React framework that provides server-side rendering, static site generation, and API routes, making it a perfect fit for this project. The combination of FFmpeg.wasm and Next.js ensures a seamless user experience with fast, client-side video compression.
 
+[Live Demo](https://compressify.sohamnandi.com/)
+
+![Demo](https://compressify.sohamnandi.com/compressify-demo.gif)
+
 ---
 
 ## Features
