@@ -29,7 +29,11 @@ export default async function convertFile(
   ffmpeg: FFmpeg,
   actionFile: FileActions,
   videoSettings: VideoInputSettings
-): Promise<any> {
+): Promise<{
+  url: string;
+  output: string;
+  outputBlob: Blob;
+}> {
   const { file, fileName, fileType } = actionFile;
   const output = removeFileExtension(fileName) + "." + videoSettings.videoType;
   ffmpeg.writeFile(fileName, await fetchFile(file));
