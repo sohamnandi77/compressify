@@ -62,29 +62,25 @@ export const customVideoCompressionCommand = (
   videoSettings: VideoInputSettings
 ): string[] => {
   const inputType = getFileExtension(input);
-  if (inputType === "mp4") {
-    return getMP4toMP4Command(input, output, videoSettings);
-  } else {
-    switch (videoSettings.videoType) {
-      case VideoFormats.MP4:
-        return getMP4Command(input, output, videoSettings);
-      case VideoFormats.AVI:
-        return getAVICommand(input, output, videoSettings);
-      case VideoFormats.MKV:
-        return getMKVCommand(input, output, videoSettings);
-      case VideoFormats.MOV:
-        return getMOVCommand(input, output, videoSettings);
-      default:
-        return ["-i", input, output];
-    }
+  if (inputType === "mp4") return getMP4toMP4Command(input, output);
+
+  switch (videoSettings.videoType) {
+    case VideoFormats.MP4:
+      return getMP4Command(input, output, videoSettings);
+    case VideoFormats.AVI:
+      return getAVICommand(input, output, videoSettings);
+    case VideoFormats.MKV:
+      return getMKVCommand(input, output, videoSettings);
+    case VideoFormats.MOV:
+      return getMOVCommand(input, output, videoSettings);
+    case VideoFormats.FLV:
+      return getFLVCommand(input, output, videoSettings);
+    default:
+      return ["-i", input, output];
   }
 };
 
-const getMP4toMP4Command = (
-  input: string,
-  output: string,
-  videoSettings: VideoInputSettings
-) => {
+const getMP4toMP4Command = (input: string, output: string) => {
   const ffmpegCommand = [
     "-i",
     input,

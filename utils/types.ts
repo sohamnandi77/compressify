@@ -6,7 +6,7 @@ export type FileActions = {
   fileType: string;
   isError?: boolean;
   url?: string;
-  output?: any;
+  output?: string;
   outputBlob?: Blob;
 };
 

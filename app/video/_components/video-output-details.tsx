@@ -22,7 +22,7 @@ export const VideoOutputDetails = ({
   );
 
   const download = () => {
-    if (!videoFile.url) return;
+    if (!videoFile.url || !videoFile.output) return;
     const a = document.createElement("a");
     a.style.display = "none";
     a.href = videoFile.url;
